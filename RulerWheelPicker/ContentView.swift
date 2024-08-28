@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var count: Int = 5
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            Text("Count : \(count)")
+            
+            WheelPicker(count: $count, values: 0...20, spacing: 8, steps: 3)
         }
-        .padding()
+        .frame(maxWidth: .infinity)
     }
 }
 
